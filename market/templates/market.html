@@ -1,34 +1,34 @@
 {% extends 'base.html' %}
-{% block tilte %}
-    Market Page
+{% block title %}
+  Market Page
 {% endblock %}
 
 {% block content %}
-<table class="table table-hover table-dark">
-  <thead>
-      <tr>
-          <!-- Your Columns HERE -->
-          <th scope="col">ITEMID</th>
-          <th scope="col">ITEMNAME</th>
-          <th scope="col">ITEMCODE</th>
-          <th scope="col">ITEMPRICE</th>
-          <th scope="col">options</th>
-        </tr>
-  </thead>
-  <tbody>
-      <!--  rows inside the table HERE: -->
-      {% for items in items %}
-        <tr>
-            <td>{{items.ITEMID}}</items></td>
-            <td>{{items.ITEMNAME}}</td>
-            <td>{{items.ITEMCODE}}</td>
-            <td>{{items.ITEMPRICE}}</td>
-            <td>
-               <button class="btn btn-outline btn btn-info">Moreinfo</button>
-               <button class="btn btn-outline btn btn-success">Purchase this item</button>
-            </td>
-           </tr>
-      {% endfor %}
-  </tbody>
-</table>
+      <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.barcode }}</td>
+                    <td>{{ item.price }}INR</td>
+                    <td>
+                        <button class="btn btn-outline btn-info">More Info</button>
+                        <button class="btn btn-outline btn-success">Purchase this Item</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
