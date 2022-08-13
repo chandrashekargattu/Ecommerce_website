@@ -5,8 +5,8 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 
+
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///market.db'
 app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql://ecomm:ecomm@localhost:5432/ecomm'
 app.config['SECRET_KEY']= 'ff648669200685e80e1de9eb'
 db = SQLAlchemy(app)
@@ -15,3 +15,4 @@ login_manager = LoginManager(app)
 login_manager.login_view = "login_page"
 login_manager.login_message_category ="danger"
 from market import route 
+
