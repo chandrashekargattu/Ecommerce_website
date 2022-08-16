@@ -13,7 +13,7 @@ def home_page():
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         purchase_form = PurchaseItemForm()
         selling_form = SellItemForm()
         if request.method == "POST":
