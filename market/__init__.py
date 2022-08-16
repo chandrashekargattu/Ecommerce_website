@@ -5,8 +5,6 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 import os 
 
-
-
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI']= 'postgresql+psycopg2://vyltqkbfwiatos:202dab04b98cbf1832199a50aa1c1c34abfeda28cda45efb92416c0a1a34ea8e@ec2-3-223-242-224.compute-1.amazonaws.com:5432/da8l04fvu1icuj'
 app.config['SQLALCHEMY_DATABASE_URI']= os.environ.get('MY_DATABASE')
